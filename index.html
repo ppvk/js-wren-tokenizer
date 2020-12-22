@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ink</title>
+        <meta charset="utf-8">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 99vh;
+                width: 100vw;
+            }
+            body {
+                display: flex;
+                flex-direction: row;
+            }
+            pre {
+                margin: 0;
+                border: solid 1px #000;
+                flex: 1;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+<pre id="wren">
+    // This is a comment.
+    System.print("Hello, world!")
+
+    class Wren {
+      flyTo(city) {
+        System.print("Flying to %(city)")
+      }
+    }
+
+    var adjectives = Fiber.new {
+      ["small", "clean", "fast"].each {|word| Fiber.yield(word) }
+    }
+
+    while (!adjectives.isDone) System.print(adjectives.call())
+</pre>
+<pre id="js">
+</pre>
+        <script src="./out/wrent.js"></script>
+        <script>
+            let p = new Wrent.Parser(
+                document.getElementById('wren').innerHTML
+            );
+            console.log(p.tokens);
+        </script>
+    </body>
+</html>

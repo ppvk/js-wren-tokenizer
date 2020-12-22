@@ -1,0 +1,26 @@
+{
+  "name": "js-wren-tokenizer",
+  "version": "0.0.0",
+  "description": "This module takes a string of wren source code, and outputs an array of tokens.",
+  "main": "src/main.js",
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-webpack-plugin": "^2.4.1",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "scripts": {
+    "build": "webpack --config scripts/webpack.js",
+    "compile": "nearleyc ./src/wren.ne --out ./src/wren.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppvk/js-wren-tokenizer.git"
+  },
+  "author": "Paul VanKeuren",
+  "license": "MIT",
+  "dependencies": {
+    "nearley": "^2.20.1",
+    "nearley-loader": "^2.0.0"
+  }
+}
